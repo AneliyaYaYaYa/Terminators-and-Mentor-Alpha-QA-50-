@@ -8,13 +8,13 @@ public enum Status {
         TODO{
             @Override
             public String toString() {
-                return "Todo";
+                return "To do";
             }
         },
         INPROGRESS{
             @Override
             public String toString() {
-                return "InProgress";
+                return "In Progress";
             }
         },
         DONE{
