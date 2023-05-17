@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4217662f-5047-4002-9398-e8cad171d209" name="Changes" comment="Adding Aneliya's Workshop(cosmetic) and BoardR-part 1 solutions" />
+    <list default="true" id="4217662f-5047-4002-9398-e8cad171d209" name="Changes" comment="Renaming In-class activity tasks &#10;The description for each task is in the respective folder. Individual solutions to each task are in the person's respective folder. (Simo's solutions are in anotehr branch)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/BoardR-in-class activity/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Aneliya's homeworks/BoardR-in-class activity/.idea/vcs.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +16,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b156cd29-0293-4c48-9d08-125a4661cf85" />
+        <option name="url" value="https://github.com/AneliyaYaYaYa/Terminators-and-Mentor-Alpha-QA-50-.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -21,13 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Ani/IdeaProjects/REPOS/NEW NEW NEW",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684317906875</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Renaming In-class activity tasks &#10;The description for each task is in the respective folder. Individual solutions to each task are in the person's respective folder. (Simo's solutions are in anotehr branch)">
+      <created>1684318171355</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684318171355</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +122,7 @@
     <MESSAGE value="Adding the task for 18May - Classes and Strings" />
     <MESSAGE value="Adding the task for 15th May - OOP overview and Classes" />
     <MESSAGE value="Adding Aneliya's Workshop(cosmetic) and BoardR-part 1 solutions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Aneliya's Workshop(cosmetic) and BoardR-part 1 solutions" />
+    <MESSAGE value="Renaming In-class activity tasks &#10;The description for each task is in the respective folder. Individual solutions to each task are in the person's respective folder. (Simo's solutions are in anotehr branch)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renaming In-class activity tasks &#10;The description for each task is in the respective folder. Individual solutions to each task are in the person's respective folder. (Simo's solutions are in anotehr branch)" />
   </component>
 </project>
