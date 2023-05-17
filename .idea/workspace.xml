@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4217662f-5047-4002-9398-e8cad171d209" name="Changes" comment="Adding package annie and main class" />
+    <list default="true" id="4217662f-5047-4002-9398-e8cad171d209" name="Changes" comment="Adding the task for 15th May - OOP overview and Classes">
+      <change afterPath="$PROJECT_DIR$/Terminators-and-Mentor-Alpha-QA-50-.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +27,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -50,7 +54,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684232832338</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding the task for 18May - Classes and Strings">
+      <created>1684233520705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684233520705</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adding the task for 15th May - OOP overview and Classes">
+      <created>1684233693270</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684233693270</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -69,6 +87,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Adding .gitignore file" />
     <MESSAGE value="Adding package annie and main class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding package annie and main class" />
+    <MESSAGE value="Adding the task for 18May - Classes and Strings" />
+    <MESSAGE value="Adding the task for 15th May - OOP overview and Classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the task for 15th May - OOP overview and Classes" />
   </component>
 </project>
