@@ -10,6 +10,7 @@ public class ShoppingCart {
     private List<Product> productList;
     
     public ShoppingCart() {
+
         productList = new ArrayList<Product>();
     }
     
