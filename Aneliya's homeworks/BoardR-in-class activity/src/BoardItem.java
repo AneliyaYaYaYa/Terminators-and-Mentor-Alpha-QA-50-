@@ -14,16 +14,15 @@ public class BoardItem {
     private String title;
     private LocalDate dueDate;
     private Status status;
-
-   private List<EventLog> history;
+    private List<EventLog> history;
 
 
     public BoardItem(String title, LocalDate dueDate) {
         setTitle(title);
         setDueDate(dueDate);
         this.status = Status.Open;
-        history = new ArrayList<EventLog>();
-        //history.add("Item created");
+        history = new ArrayList<>();
+        history.add(new EventLog(String.format("Item created: ' %s', [%s | %s ]", title, status, dueDate)));
     }
 
     public List<EventLog> getHistory() {
@@ -40,7 +39,7 @@ public class BoardItem {
         }
 
         this.title = title;
-        // history.add(title);
+        //history.add(new EventLog(String.format("Title changed from %s to %s", title, title)));
     }
 
     public LocalDate getDueDate() {
@@ -52,6 +51,7 @@ public class BoardItem {
             throw new IllegalArgumentException(ERROR_DUE_DATE);
         }
         this.dueDate = dueDate;
+//        history.add(new EventLog(String.format("DueDate changed from %s to %s", dueDate, dueDate)));
     }
 
     public String getStatus() {
@@ -75,6 +75,7 @@ public class BoardItem {
                 status =   Status.Done;
                 break;
         }
+        history.add(new EventLog(String.format("Status changed from %s to %s", status, status)));
 
     }
 
@@ -95,7 +96,7 @@ public class BoardItem {
             case Verified:
                 break;
         }
-
+        history.add(new EventLog(String.format("Status changed from %s to %s", status, status)));
     }
 
     public String viewInfo() {
@@ -105,13 +106,24 @@ public class BoardItem {
     }
 
 
-//    public String displayHistory() {
-//    StringBuilder displayedHistory = new StringBuilder("Items created: ");
-//    for (EventLog log : history){
-//        displayedHistory.append(String.format("%s", log);
-//    }
-//        return displayedHistory.toString();
-//    }
+    public void displayHistory() {
+        StringBuilder stringBuilder = new StringBuilder(String.format("Item created: %s%s", title, dueDate));
 
+        if(history.isEmpty()){
+            stringBuilder.append("No history");
+        }
+
+        for (EventLog event: getHistory()) {
+            stringBuilder.append(event.toString());
+        }
+
+        System.out.println(stringBuilder.toString());
+    }
+
+//        for (EventLog event : getHistory()) {
+//            System.out.println(event);
+//        }
+//       // System.out.println(getHistory());
+//    }
 
 }

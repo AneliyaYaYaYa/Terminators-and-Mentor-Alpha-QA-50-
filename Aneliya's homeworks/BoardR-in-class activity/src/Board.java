@@ -3,10 +3,25 @@ import java.util.List;
 
 public class Board {
 
-    public static List<BoardItem> items = new ArrayList<>();
+    private static List<BoardItem> items;
 
     public Board(){
-        //items = new ArrayList<>();
+        items = new ArrayList<>();
     }
 
+    public List<BoardItem> getItems() {
+        return new ArrayList<>(items);
+    }
+
+    public void addItem (BoardItem value){
+        if (items.contains(value)) {
+            throw new IllegalArgumentException("Item already in the list.");
+            //return;
+        }
+        items.add(value);
+    }
+
+    public int totalItems(){
+        return items.size();
+    }
 }
