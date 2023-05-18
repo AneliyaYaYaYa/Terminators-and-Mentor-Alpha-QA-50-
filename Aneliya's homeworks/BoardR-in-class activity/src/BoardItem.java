@@ -22,7 +22,7 @@ public class BoardItem {
         setDueDate(dueDate);
         this.status = Status.Open;
         history = new ArrayList<>();
-        history.add(new EventLog(String.format("Item created: ' %s', [%s | %s ]", title, status, dueDate)));
+        history.add(new EventLog(String.format("Item created: ' %s', [%s | %s ]%n", title, status, dueDate)));
     }
 
     public List<EventLog> getHistory() {
@@ -46,12 +46,12 @@ public class BoardItem {
         return dueDate;
     }
 
-    public void setDueDate(LocalDate dueDate) { //it says in the descr IT CAN BE CHANGED
+    public void setDueDate(LocalDate dueDate) {
         if (dueDate.isBefore(LocalDate.now())){
             throw new IllegalArgumentException(ERROR_DUE_DATE);
         }
         this.dueDate = dueDate;
-//        history.add(new EventLog(String.format("DueDate changed from %s to %s", dueDate, dueDate)));
+       //history.add(new EventLog(String.format("DueDate changed from ... to %s", dueDate)));
     }
 
     public String getStatus() {
@@ -75,7 +75,7 @@ public class BoardItem {
                 status =   Status.Done;
                 break;
         }
-        history.add(new EventLog(String.format("Status changed from %s to %s", status, status)));
+        history.add(new EventLog(String.format("Status changed from ... to %s%n",  status)));
 
     }
 
@@ -96,7 +96,7 @@ public class BoardItem {
             case Verified:
                 break;
         }
-        history.add(new EventLog(String.format("Status changed from %s to %s", status, status)));
+        history.add(new EventLog(String.format("Status changed from ... to %s%n", status)));
     }
 
     public String viewInfo() {
@@ -107,23 +107,10 @@ public class BoardItem {
 
 
     public void displayHistory() {
-        StringBuilder stringBuilder = new StringBuilder(String.format("Item created: %s%s", title, dueDate));
-
-        if(history.isEmpty()){
-            stringBuilder.append("No history");
-        }
-
         for (EventLog event: getHistory()) {
-            stringBuilder.append(event.toString());
+            System.out.println(event.viewInfo());
         }
-
-        System.out.println(stringBuilder.toString());
     }
 
-//        for (EventLog event : getHistory()) {
-//            System.out.println(event);
-//        }
-//       // System.out.println(getHistory());
-//    }
 
 }
