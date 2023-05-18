@@ -4,14 +4,13 @@ import java.time.LocalDateTime;
 public class Main {
     public static void main(String[] args) {
 
-        BoardItem item = new BoardItem("Registration doesn't work", LocalDate.now().plusDays(2));
-        System.out.println(item.status);
-        item.advanceStatus();
-        System.out.println(item.status);
-        item.advanceStatus();
-        System.out.println(item.status);
-        item.revertStatus();
-        System.out.println(item.status);
+        BoardItem item1 = new BoardItem("Implement login/logout", LocalDate.now().plusDays(3));
+        BoardItem item2 = new BoardItem("Secure admin endpoints", LocalDate.now().plusDays(5));
+
+        Board board = new Board();
+
+        board.items.add(item1);
+        board.items.add(item2);
 
     }
 }

@@ -5,7 +5,7 @@ public class Board {
 
     public static List<BoardItem> items = new ArrayList<>();
 
-    private Board(){
+    public Board(){
         //items = new ArrayList<>();
     }
 
