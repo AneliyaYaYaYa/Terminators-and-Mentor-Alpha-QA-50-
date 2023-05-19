@@ -6,39 +6,49 @@ import com.company.cosmetics.models.common.ScentType;
 
 
 public class CreamImpl extends ProductBase implements Cream {
-    
+
+    private ScentType scent;
+
     public CreamImpl(String name, String brand, double price, GenderType gender, ScentType scent) {
-        super();
-        throw new UnsupportedOperationException("Not implemented yet. CreamImpl Class");
+        super(name,brand,price,gender);
+        setScent(scent);
+    }
+
+    public void setScent(ScentType value) {
+        if (value != ScentType.ROSE && value != ScentType.VANILLA && value != ScentType.LAVENDER ){
+            throw new IllegalArgumentException("Invalid scent type. Allowed values: Rose, Vanilla, Lavender.");
+        }
+        this.scent = value;
     }
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet. CreamImpl Class");
+     return super.getName();
     }
 
     @Override
     public String getBrand() {
-        throw new UnsupportedOperationException("Not implemented yet. CreamImpl Class");
+        return super.getBrand();
     }
 
     @Override
     public double getPrice() {
-        throw new UnsupportedOperationException("Not implemented yet. CreamImpl Class");
+        return super.getPrice();
     }
 
     @Override
     public GenderType getGender() {
-        throw new UnsupportedOperationException("Not implemented yet. CreamImpl Class");
+       return  super.getGender();
     }
 
     @Override
     public String print() {
-        throw new UnsupportedOperationException("Not implemented yet. CreamImpl Class");
-    }
+            String adultPrint = super.print();
+            return String.format("%s\n #Scent: %s", adultPrint, getScent());
+        }
 
     @Override
     public ScentType getScent() {
-        throw new UnsupportedOperationException("Not implemented yet. CreamImpl Class");
+        return this.scent;
     }
 }

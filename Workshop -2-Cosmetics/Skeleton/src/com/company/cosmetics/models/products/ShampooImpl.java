@@ -6,44 +6,64 @@ import com.company.cosmetics.models.common.UsageType;
 
 
 public class ShampooImpl extends ProductBase implements Shampoo {
-    
+
+    private int milliliters;
+    UsageType everyDay;
+
     public ShampooImpl(String name, String brand, double price, GenderType gender, int milliliters, UsageType everyDay) {
-        super();
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        super(name, brand, price, gender);
+        setMilliliters(milliliters);
+        setEveryDay(everyDay);
+    }
+
+    public void setMilliliters(int value) {
+        if (value < 0) {
+            throw new IllegalArgumentException("Milliliters cannot be negative number");
+        }
+        this.milliliters = value;
+    }
+
+    public UsageType getEveryDay() {
+        return this.everyDay;
+    }
+
+    public void setEveryDay(UsageType everyDay) {
+        this.everyDay = everyDay;
     }
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getName();
     }
 
     @Override
     public String getBrand() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getBrand();
     }
 
     @Override
     public double getPrice() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getPrice();
     }
 
     @Override
     public GenderType getGender() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getGender();
     }
 
     @Override
     public String print() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        String adultPrint = super.print();
+        return String.format("%s\n  #Milliliters: %d\n  #Usage: %s", adultPrint,milliliters,everyDay);
     }
 
     @Override
     public int getMilliliters() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return this.milliliters;
     }
 
     @Override
     public UsageType getUsage() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return this.everyDay;
     }
 }

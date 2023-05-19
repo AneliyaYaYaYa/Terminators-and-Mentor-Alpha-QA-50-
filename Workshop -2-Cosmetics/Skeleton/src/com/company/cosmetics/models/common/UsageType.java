@@ -12,7 +12,7 @@ public enum UsageType {
             case MEDICAL:
                 return "Medical";
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Invalid usageType");
         }
     }
 }

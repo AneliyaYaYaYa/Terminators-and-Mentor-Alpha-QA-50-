@@ -15,7 +15,7 @@ public enum ScentType {
             case LAVENDER:
                 return "Lavender";
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Invalid scent" + this);
         }
     }
 }

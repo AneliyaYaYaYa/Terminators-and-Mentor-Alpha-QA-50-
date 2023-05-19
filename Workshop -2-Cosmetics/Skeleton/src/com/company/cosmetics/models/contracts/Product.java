@@ -5,6 +5,7 @@ import com.company.cosmetics.models.common.GenderType;
 public interface Product {
     
     String getName();
+
     
     String getBrand();
     

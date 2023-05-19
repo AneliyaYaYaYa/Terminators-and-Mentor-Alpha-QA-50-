@@ -15,7 +15,7 @@ public enum GenderType {
             case UNISEX:
                 return "Unisex";
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("Invalid gender: " + this);
         }
     }
 }
