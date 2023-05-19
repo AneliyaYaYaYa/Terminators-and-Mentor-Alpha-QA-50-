@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BoardItem {
+public abstract class BoardItem {
 
     private static final int MAX_TITLE_LENGTH = 30;
     private static final int MIN_TITLE_LENGTH = 5;
@@ -14,32 +14,38 @@ public class BoardItem {
     private String title;
     private LocalDate dueDate;
     private Status status;
-    private List<EventLog> history;
+    public final List<EventLog> history; //private to public so that Task can use it as well
 
 
     public BoardItem(String title, LocalDate dueDate) {
-        setTitle(title);
-        setDueDate(dueDate);
-        this.status = Status.Open;
+        validateTitle(title);
+        this.title = title;
+        validateDueDate(dueDate);
+        this.dueDate = dueDate;
+        this.status = Status.OPEN;
         history = new ArrayList<>();
-        history.add(new EventLog(String.format("Item created: ' %s', [%s | %s ]%n", title, status, dueDate)));
+        history.add(new EventLog(String.format(
+                "Item created: %s", viewInfo())));
     }
 
     public List<EventLog> getHistory() {
         return new ArrayList<>(history);
     }
 
+//    public void setHistory(){
+//        history.add(new EventLog(String.format(
+//                "Item created: %s", viewInfo())));
+//    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
-        if (title.length() < MIN_TITLE_LENGTH || title.length() > MAX_TITLE_LENGTH) {
-            throw new IllegalArgumentException(ERROR_TITLE_LENGTH);
-        }
-
+        validateTitle(title);
+        history.add(new EventLog(String.format(
+                "Title changed from %s to %s", getTitle(), title)));
         this.title = title;
-        //history.add(new EventLog(String.format("Title changed from %s to %s", title, title)));
     }
 
     public LocalDate getDueDate() {
@@ -47,70 +53,63 @@ public class BoardItem {
     }
 
     public void setDueDate(LocalDate dueDate) {
-        if (dueDate.isBefore(LocalDate.now())){
-            throw new IllegalArgumentException(ERROR_DUE_DATE);
-        }
+        validateDueDate(dueDate);
+        history.add(new EventLog(String.format(
+                "DueDate changed from %s to %s", getDueDate(), dueDate)));
         this.dueDate = dueDate;
-       //history.add(new EventLog(String.format("DueDate changed from ... to %s", dueDate)));
     }
 
     public String getStatus() {
         return String.valueOf(status);
     }
 
-    public void revertStatus(){
-        switch (status){
-            case Open:
-                break;
-            case Todo:
-                status =   Status.Open;
-                break;
-            case InProgress:
-                status =   Status.Todo;
-                break;
-            case Done:
-                status =  Status.InProgress;
-                break;
-            case Verified:
-                status =   Status.Done;
-                break;
-        }
-        history.add(new EventLog(String.format("Status changed from ... to %s%n",  status)));
+    public void setStatus(Status status) {
+        history.add(new EventLog(String.format(
+                "Status changed from %s to %s", getStatus(), status)));
+        this.status = status;
+    }
 
+    public void revertStatus() {
+        if (status != Status.OPEN) {
+            setStatus(Status.values()[status.ordinal() - 1]);
+        } else {
+            history.add(new EventLog(String.format(
+                    "Can't revert, already at %s", Status.values()[0])));
+        }
     }
 
     public void advanceStatus() {
-        switch (status) {
-            case Open:
-                status =  Status.Todo;
-                break;
-            case Todo:
-                status = Status.InProgress;
-                break;
-            case InProgress:
-                status = Status.Done;
-                break;
-            case Done:
-                status = Status.Verified;
-                break;
-            case Verified:
-                break;
+        if (status != Status.VERIFIED) {
+            setStatus(Status.values()[status.ordinal() + 1]);
+        } else {
+            history.add(new EventLog(String.format(
+                    "Can't advance, already at %s", Status.values()[Status.values().length - 1])));
         }
-        history.add(new EventLog(String.format("Status changed from ... to %s%n", status)));
     }
 
     public String viewInfo() {
         //return String.format("%s, [%s | %tY-%tm-%td ]", title, status, dueDate, dueDate, dueDate);
         return String.format("%s, [%s | %s ]", title, status, dueDate);
-
     }
 
 
     public void displayHistory() {
-        for (EventLog event: getHistory()) {
+        for (EventLog event : getHistory()) {
             System.out.println(event.viewInfo());
         }
     }
 
+    private static void validateTitle(String title) {
+        if (title.length() < MIN_TITLE_LENGTH || title.length() > MAX_TITLE_LENGTH) {
+            throw new IllegalArgumentException(ERROR_TITLE_LENGTH);
+        }
+    }
 
+    private static void validateDueDate(LocalDate dueDate) {
+        if (dueDate.isBefore(LocalDate.now())) {
+            throw new IllegalArgumentException(ERROR_DUE_DATE);
+        }
+    }
 }
+
+

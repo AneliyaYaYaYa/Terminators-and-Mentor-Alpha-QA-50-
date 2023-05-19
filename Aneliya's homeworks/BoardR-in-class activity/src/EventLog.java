@@ -16,7 +16,11 @@ public class EventLog {
         if (description.length() <= DESCRIPTION_MIN_LENGTH || description == null) {
             throw new IllegalArgumentException(DESCRIPTION_ERROR_MSG);
         }
-            this.description = description;
+        this.description = description;
+    }
+
+    public EventLog() {
+        throw new IllegalArgumentException(DESCRIPTION_ERROR_MSG);
     }
 
     public String getDescription() {
@@ -24,8 +28,8 @@ public class EventLog {
     }
 
 
-    public String viewInfo(){
-        return String.format("[%td-%tB-%tY %tr] %s", timeStamp, timeStamp, timeStamp, timeStamp, description);
+    public String viewInfo() {
+        return String.format("[%td-%tB-%tY %tr] %s", timeStamp, timeStamp, timeStamp, timeStamp, getDescription());
     }
 
 }
