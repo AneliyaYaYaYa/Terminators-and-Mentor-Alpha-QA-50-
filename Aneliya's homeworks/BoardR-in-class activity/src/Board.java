@@ -16,7 +16,6 @@ public class Board {
     public void addItem (BoardItem value){
         if (items.contains(value)) {
             throw new IllegalArgumentException("Item already in the list.");
-            //return;
         }
         items.add(value);
     }

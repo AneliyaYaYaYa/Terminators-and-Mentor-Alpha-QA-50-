@@ -14,16 +14,16 @@ public abstract class BoardItem {
     private String title;
     private LocalDate dueDate;
     protected Status status;
-    protected final List<EventLog> history; //protected so that Task can use it as well
+    protected List<EventLog> history; //protected so that Task can use it as well
 
 
     public BoardItem(String title, LocalDate dueDate) {
+        history = new ArrayList<>(); //initialize here, so that we can save space in the memory otherwise Null pointer ex error
         validateTitle(title);
         this.title = title;
         validateDueDate(dueDate);
         this.dueDate = dueDate;
         this.status = Status.OPEN; //vzema status ot tuk za Eventlog-a//instance of
-        history = new ArrayList<>();
         history.add(new EventLog(String.format(
                 "Item created: %s", viewInfo())));
     }
