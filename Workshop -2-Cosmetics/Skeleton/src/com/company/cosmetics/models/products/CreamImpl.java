@@ -7,23 +7,29 @@ import com.company.cosmetics.models.common.ScentType;
 
 public class CreamImpl extends ProductBase implements Cream {
 
+    private static final String INVALID_SCENT_TYPE = "Invalid scent type. Allowed values: Rose, Vanilla, Lavender.";
     private ScentType scent;
 
     public CreamImpl(String name, String brand, double price, GenderType gender, ScentType scent) {
-        super(name,brand,price,gender);
-        setScent(scent);
+        super(name, brand, price, gender);
+        validateScent(scent);
+        this.scent = scent;
     }
 
-    public void setScent(ScentType value) {
-        if (value != ScentType.ROSE && value != ScentType.VANILLA && value != ScentType.LAVENDER ){
-            throw new IllegalArgumentException("Invalid scent type. Allowed values: Rose, Vanilla, Lavender.");
-        }
+    private void setScent(ScentType value) {
+        validateScent(value);
         this.scent = value;
+    }
+
+    private static void validateScent(ScentType value) {
+        if (value != ScentType.ROSE && value != ScentType.VANILLA && value != ScentType.LAVENDER) {
+            throw new IllegalArgumentException(INVALID_SCENT_TYPE);
+        }
     }
 
     @Override
     public String getName() {
-     return super.getName();
+        return super.getName();
     }
 
     @Override
@@ -38,14 +44,14 @@ public class CreamImpl extends ProductBase implements Cream {
 
     @Override
     public GenderType getGender() {
-       return  super.getGender();
+        return super.getGender();
     }
 
     @Override
     public String print() {
-            String adultPrint = super.print();
-            return String.format("%s\n #Scent: %s", adultPrint, getScent());
-        }
+        String adultPrint = super.print();
+        return String.format("%s\n #Scent: %s", adultPrint, getScent());
+    }
 
     @Override
     public ScentType getScent() {

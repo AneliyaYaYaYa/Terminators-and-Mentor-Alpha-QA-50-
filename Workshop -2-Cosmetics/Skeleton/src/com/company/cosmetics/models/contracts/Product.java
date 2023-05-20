@@ -12,7 +12,9 @@ public interface Product {
     double getPrice();
     
     GenderType getGender();
+
+
     
     String print();
-    
+
 }

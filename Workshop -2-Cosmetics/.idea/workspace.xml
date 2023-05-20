@@ -5,16 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be918f03-d47d-46c1-a9ab-d251f6eaac66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/common/GenderType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/common/GenderType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/common/ScentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/common/ScentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/common/UsageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/common/UsageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/Startup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/CategoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/CategoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/cart/ShoppingCartImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/cart/ShoppingCartImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/contracts/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/contracts/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/contracts/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/contracts/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/contracts/Toothpaste.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/contracts/Toothpaste.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/CreamImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/CreamImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/ProductBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/ProductBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/ShampooImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/ShampooImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/ToothpasteImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton/src/com/company/cosmetics/models/products/ToothpasteImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/Startup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/Startup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/CategoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/CategoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/cart/ShoppingCartImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/cart/ShoppingCartImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/CreamImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/CreamImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/ProductBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/ProductBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/ShampooImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/ShampooImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/ToothpasteImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Workshop -2-Cosmetics/com/company/cosmetics/models/products/ToothpasteImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,79 +47,67 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.com.company.cosmetics.tests.product in Workshop -2-Cosmetics">
-    <configuration name="Constructor_Should" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Startup">
+    <configuration name="Startup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.cosmetics.Startup" />
       <module name="Workshop -2-Cosmetics" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.cosmetics.tests.product.*" />
+          <option name="PATTERN" value="com.company.cosmetics.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests.product" />
-      <option name="MAIN_CLASS_NAME" value="com.company.cosmetics.tests.product.Constructor_Should" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Workshop -2-Cosmetics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Workshop -2-Cosmetics" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateShampoo_Should" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Workshop -2-Cosmetics" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.cosmetics.tests.cosmeticsfactory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests.cosmeticsfactory" />
+      <option name="MAIN_CLASS_NAME" value="com.company.cosmetics.tests.cosmeticsfactory.CreateShampoo_Should" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Constructor_Should.createCreamWhenValidValuesArePassed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateToothpaste_Should" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Workshop -2-Cosmetics" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.cosmetics.tests.product.*" />
+          <option name="PATTERN" value="com.company.cosmetics.tests.cosmeticsfactory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests.product" />
-      <option name="MAIN_CLASS_NAME" value="com.company.cosmetics.tests.product.Constructor_Should" />
-      <option name="METHOD_NAME" value="createCreamWhenValidValuesArePassed" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests.cosmeticsfactory" />
+      <option name="MAIN_CLASS_NAME" value="com.company.cosmetics.tests.cosmeticsfactory.CreateToothpaste_Should" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Constructor_Should.throwWhenNullIngredientsArePassed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.company.cosmetics.tests in Workshop -2-Cosmetics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Workshop -2-Cosmetics" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.cosmetics.tests.product.*" />
+          <option name="PATTERN" value="com.company.cosmetics.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests.product" />
-      <option name="MAIN_CLASS_NAME" value="com.company.cosmetics.tests.product.Constructor_Should" />
-      <option name="METHOD_NAME" value="throwWhenNullIngredientsArePassed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Constructor_Should.throwWhenPriceIsNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Workshop -2-Cosmetics" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.cosmetics.tests.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests.product" />
-      <option name="MAIN_CLASS_NAME" value="com.company.cosmetics.tests.product.Constructor_Should" />
-      <option name="METHOD_NAME" value="throwWhenPriceIsNegative" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.company.cosmetics.tests.product in Workshop -2-Cosmetics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Workshop -2-Cosmetics" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.cosmetics.tests.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests.product" />
+      <option name="PACKAGE_NAME" value="com.company.cosmetics.tests" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.com.company.cosmetics.tests.product in Workshop -2-Cosmetics" />
-        <item itemvalue="JUnit.Constructor_Should" />
-        <item itemvalue="JUnit.Constructor_Should.throwWhenNullIngredientsArePassed" />
-        <item itemvalue="JUnit.Constructor_Should.throwWhenPriceIsNegative" />
-        <item itemvalue="JUnit.Constructor_Should.createCreamWhenValidValuesArePassed" />
+        <item itemvalue="Application.Startup" />
+        <item itemvalue="JUnit.All in Workshop -2-Cosmetics" />
+        <item itemvalue="JUnit.com.company.cosmetics.tests in Workshop -2-Cosmetics" />
+        <item itemvalue="JUnit.CreateToothpaste_Should" />
+        <item itemvalue="JUnit.CreateShampoo_Should" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684495335414</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add ProductBase class workshop 2">
+      <created>1684508347882</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684508347882</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,7 +164,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Up-to-Date workshop2 Cosmetics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Up-to-Date workshop2 Cosmetics" />
+    <MESSAGE value="Add ProductBase class workshop 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ProductBase class workshop 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

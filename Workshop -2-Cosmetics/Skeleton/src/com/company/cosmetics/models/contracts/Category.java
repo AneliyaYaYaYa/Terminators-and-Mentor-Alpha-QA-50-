@@ -5,6 +5,7 @@ public interface Category {
     String getName();
     
     void addProduct(Product product);
+
     
     void removeProduct(Product product);
     

@@ -9,11 +9,14 @@ import java.util.List;
 
 public class ToothpasteImpl extends ProductBase implements Toothpaste {
 
+    private static final String INGREDIENTS_ERROR_NULL = "Ingredients cannot be null";
     private List<String> ingredients;
 
     public ToothpasteImpl(String name, String brand, double price, GenderType gender, List<String> ingredients) {
         super(name, brand, price, gender);
-        setIngredients(ingredients);
+
+        validateIngredients(ingredients);
+        this.ingredients = new ArrayList<>(ingredients);
 
     }
 
@@ -45,16 +48,19 @@ public class ToothpasteImpl extends ProductBase implements Toothpaste {
 
     }
 
-    public void setIngredients(List<String> ingredients) {
-        if (ingredients == null) {
-            throw new IllegalArgumentException("Ingredients cannot be null");
-        }
-        this.ingredients = new ArrayList<>();
+    private void setIngredients(List<String> ingredients) {
+        validateIngredients(ingredients);
+        this.ingredients = new ArrayList<>(ingredients);
     }
 
+    private static void validateIngredients(List<String> ingredients) {
+        if (ingredients == null) {
+            throw new IllegalArgumentException(INGREDIENTS_ERROR_NULL);
+        }
+    }
 
     @Override
     public List<String> getIngredients() {
-        return this.ingredients;
+        return new ArrayList<>(ingredients);    //need to make copy of Ingredients
     }
 }
