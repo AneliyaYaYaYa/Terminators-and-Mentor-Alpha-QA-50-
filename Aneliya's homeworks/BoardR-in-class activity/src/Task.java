@@ -1,36 +1,21 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Task extends BoardItem{
+public class Task extends BoardItem {
 
-    //historyEventLog issue!
-    //use the Hints!!
     private static final int NAME_MIN_LENGTH = 5;
     private static final int NAME_MAX_LENGTH = 30;
     public static final String NAME_LENGTH_ERROR = String.format(
             "Assignee name should be between %d and %d characters.", NAME_MIN_LENGTH, NAME_MAX_LENGTH);
     public static final String NULL_ERROR = "Assignee name cannot be null.";
     private String assignee;
-    private Status initialStatus = Status.TODO;
-//    private final List<EventLog> history;
 
-    public Task(String title,  String assignee, LocalDate dueDate) {
+    private Status initialStatus = Status.TODO;
+
+    public Task(String title, String assignee, LocalDate dueDate) {
         super(title, dueDate);
         validateAssignee(assignee);
         this.assignee = assignee;
-        setStatus(initialStatus);
-//        this.history = new ArrayList<>();
-//        history.add(new EventLog(String.format(
-//                "Item created: %s", viewInfo())));
-    }
-
-    public Status getInitialStatus() {
-        return initialStatus;
-    }
-
-    private void setInitialStatus(Status initialStatus) {
-        this.initialStatus = Status.TODO;
+        this.status = initialStatus;
     }
 
     public String getAssignee() {
@@ -45,8 +30,13 @@ public class Task extends BoardItem{
     }
 
     @Override
-    public String viewInfo() {
-        return String.format("%s, [%s | %s ]", super.getTitle(), getInitialStatus(), super.getDueDate());
+    public void revertStatus() {
+        if (status != Status.TODO) {
+            setStatus(Status.values()[status.ordinal() - 1]);
+        } else {
+            history.add(new EventLog(String.format(
+                    "Can't revert, already at %s", Status.values()[0])));
+        }
     }
 
     private static void validateAssignee(String assignee) {
