@@ -90,7 +90,7 @@ public class BoardItem {
     public void viewEvents(){
         viewEvents(getItemID().toString());
     }
-    public void viewEvents(String objID){
+    public void viewEvents(String objID){ //rename method to displayHistory(), add old+new formatting for event changes
         for (String[] event : EventLogList.getEventLog(objID)) {
             System.out.println(event[0] + " " + event[1]);
         }
