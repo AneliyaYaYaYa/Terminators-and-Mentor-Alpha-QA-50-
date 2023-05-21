@@ -4,6 +4,7 @@ import com.company.cosmetics.models.contracts.Toothpaste;
 import com.company.cosmetics.models.common.GenderType;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ToothpasteImpl extends ProductBase implements Toothpaste {
@@ -25,31 +26,31 @@ public class ToothpasteImpl extends ProductBase implements Toothpaste {
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet. ToothpasteImpl class");
+        return super.getName();
     }
 
     @Override
     public String getBrand() {
-        throw new UnsupportedOperationException("Not implemented yet. ToothpasteImpl class");
+        return super.getBrand();
     }
 
     @Override
     public double getPrice() {
-        throw new UnsupportedOperationException("Not implemented yet. ToothpasteImpl class");
+        return super.getPrice();
     }
 
     @Override
     public GenderType getGender() {
-        throw new UnsupportedOperationException("Not implemented yet. ToothpasteImpl class");
+        return super.getGender();
     }
 
     @Override
     public String print() {
-        throw new UnsupportedOperationException("Not implemented yet. ToothpasteImpl class");
+        return String.format("%s%n #Ingredients: %s%n ===", super.print(), getIngredients().toString());
     }
 
     @Override
     public List<String> getIngredients() {
-        throw new UnsupportedOperationException("Not implemented yet. ToothpasteImpl class");
+        return  new ArrayList<>(ingredients);
     }
 }

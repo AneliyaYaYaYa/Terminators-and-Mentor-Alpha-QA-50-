@@ -7,13 +7,13 @@ import com.company.cosmetics.models.common.UsageType;
 
 public class ShampooImpl extends ProductBase implements Shampoo {
 
-    public static final int MIN_MILLILITERS = 0;
+    private static final int MIN_MILLILITERS = 0;
 
-    public static final String MILLILITERS_ERROR = "Milliliters cannot be negative.";
+    private static final String MILLILITERS_ERROR = "Milliliters cannot be negative.";
 
     private int milliliters;
 
-    private UsageType everyday;
+    private final UsageType everyday;
 
     public ShampooImpl(String name, String brand, double price, GenderType gender, int milliliters, UsageType everyDay) {
         super(name, brand, price, gender);
@@ -31,37 +31,36 @@ public class ShampooImpl extends ProductBase implements Shampoo {
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getName();
     }
 
     @Override
     public String getBrand() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getBrand();
     }
 
     @Override
     public double getPrice() {
-        return getPrice();
-        //throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getPrice();
     }
 
     @Override
     public GenderType getGender() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return super.getGender();
     }
 
     @Override
     public String print() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return String.format("%s%n #Milliliters: %d%n #Usage: %s%n ===", super.print(), getMilliliters(), getUsage());
     }
 
     @Override
     public int getMilliliters() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return milliliters;
     }
 
     @Override
     public UsageType getUsage() {
-        throw new UnsupportedOperationException("Not implemented yet. ShampooImpl class");
+        return everyday;
     }
 }
