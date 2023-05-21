@@ -14,16 +14,16 @@ public abstract class BoardItem {
     private String title;
     private LocalDate dueDate;
     protected Status status;
-    protected List<EventLog> history; //protected so that Task can use it as well
+    protected final List<EventLog> history; //protected so that Task can use it as well
 
 
-    public BoardItem(String title, LocalDate dueDate) {
+    public BoardItem(String title, LocalDate dueDate, Status initialStatus) {
         history = new ArrayList<>(); //initialize here, so that we can save space in the memory otherwise Null pointer ex error
         validateTitle(title);
         this.title = title;
         validateDueDate(dueDate);
         this.dueDate = dueDate;
-        this.status = Status.OPEN; //vzema status ot tuk za Eventlog-a//instance of
+        this.status = initialStatus;
         history.add(new EventLog(String.format(
                 "Item created: %s", viewInfo())));
     }
@@ -58,13 +58,13 @@ public abstract class BoardItem {
         return status;
     }
 
-    public void setStatus(Status status) {
+    protected void setStatus(Status status) {
         history.add(new EventLog(String.format(
                 "Status changed from %s to %s", getStatus(), status)));
         this.status = status;
     }
 
-    public void revertStatus() {
+    protected void revertStatus() {
         if (status != Status.OPEN) {
             setStatus(Status.values()[status.ordinal() - 1]);
         } else {
@@ -73,7 +73,7 @@ public abstract class BoardItem {
         }
     }
 
-    public void advanceStatus() {
+    protected void advanceStatus() {
         if (status != Status.VERIFIED) {
             setStatus(Status.values()[status.ordinal() + 1]);
         } else {

@@ -4,18 +4,18 @@ public class Task extends BoardItem {
 
     private static final int NAME_MIN_LENGTH = 5;
     private static final int NAME_MAX_LENGTH = 30;
-    public static final String NAME_LENGTH_ERROR = String.format(
+    private static final String NAME_LENGTH_ERROR = String.format(
             "Assignee name should be between %d and %d characters.", NAME_MIN_LENGTH, NAME_MAX_LENGTH);
-    public static final String NULL_ERROR = "Assignee name cannot be null.";
+    private static final String NULL_ERROR = "Assignee name cannot be null.";
     private String assignee;
-
-    private Status initialStatus = Status.TODO;
+    //private final Status initialStatus = Status.TODO;
 
     public Task(String title, String assignee, LocalDate dueDate) {
-        super(title, dueDate);
+        super(title, dueDate, Status.TODO);
+        //this.status = Status.TODO;
         validateAssignee(assignee);
         this.assignee = assignee;
-        this.status = initialStatus;
+
     }
 
     public String getAssignee() {
