@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Board {
     private static final List<BoardItem> items = new ArrayList<>();
-    private static final String ITEM_EXISTS = "already in the list";
+    private static final String ITEM_EXISTS = " already in the list";
 
     public static void addItems(BoardItem item){
             items.add(item);

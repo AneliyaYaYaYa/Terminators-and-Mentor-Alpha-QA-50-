@@ -1,5 +1,7 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.UUID;
 
 public class BoardItem {
     private static final int TITLE_MIN_LENGTH = 5;
@@ -8,25 +10,28 @@ public class BoardItem {
             String.format("Please provide a title with length between %d and %d chars",
                     TITLE_MIN_LENGTH,
                     TITLE_MAX_LENGTH);
+    public static final String INVALID_DUE_DATE = "Invalid due date";
     private String title;
     private LocalDate dueDate;
     private Status status;
-    private static boolean added = false;
+    private UUID objID;
+    private static boolean added = true;
 
     BoardItem(String title, LocalDate input) {
+        setAdded();
         setTitle(title);
         long dateOffset = ChronoUnit.DAYS.between(LocalDate.now(), input);
         setDueDate(dateOffset);
         setStatus();
         if(this.title != null && this.dueDate!=null)
             Board.addItems(this);
-
-        //EventLog.(String.format("Item created '%s' ", title) + LocalDateTime.now());
+        objID = UUID.randomUUID();
+        EventLogList.eventAdd(EventType.NEW, LocalDateTime.now(), this.objID);
         setAdded();
     }
     //begin setters
     public void newTitle (String title){
-        //EventLog.add(String.format("Title changed from '%s' to '%s'", this.title, title) + LocalDateTime.now());
+        EventLogList.eventAdd(EventType.NEW_TITLE, LocalDateTime.now(), this.objID);
         setTitle(title);
     }
     private void setTitle(String title){
@@ -35,16 +40,14 @@ public class BoardItem {
         else throw new IllegalArgumentException(TITLE_ERROR);
     }
     public void newDueDate (LocalDate input) {
-        //EventLog.add(String.format("Due date changed from '%s' to '%s' ",
-        //        this.dueDate,
-        //        ChronoUnit.DAYS.between(LocalDate.now(), input)) + LocalDateTime.now());
+        EventLogList.eventAdd(EventType.NEW_DATE, LocalDateTime.now(), this.objID);
         long dateOffset = ChronoUnit.DAYS.between(LocalDate.now(), input);
         setDueDate(dateOffset);
     }
     private void setDueDate(long dateOffset) {
         if (dateOffset >= 0)
             this.dueDate = LocalDate.now().plusDays(dateOffset);
-        else System.out.println("Invalid due date");
+        else System.out.println(INVALID_DUE_DATE);
      }
     private void setStatus(){
         status = Status.OPEN;
@@ -57,18 +60,16 @@ public class BoardItem {
         int index = status.ordinal();
         if (index != 4) index++;
         status = setStatus(index);
-         //EventLog.add(String.format("Status changed from '%s' to '%s' ",
-         //        setStatus(index-1), getStatus()) + LocalDateTime.now());
+         EventLogList.eventAdd(EventType.NEW_STATUS, LocalDateTime.now(), this.objID);
      }
      public void revertStatus(){
          int index = status.ordinal();
          if (index != 0) index--;
          status = setStatus(index);
-         //EventLog.add(String.format("Status changed from '%s' to '%s' ",
-         //        setStatus(index+1), getStatus()) + LocalDateTime.now());
+         EventLogList.eventAdd(EventType.NEW_STATUS, LocalDateTime.now(), this.objID);
      }
      private void setAdded(){
-        added = true;
+        added = !added;
      }
     //end setters
     // begin getters
@@ -81,15 +82,21 @@ public class BoardItem {
     public Status getStatus(){
         return status;
         }
-    public String viewInfo(){
-        return String.format("%s ", getTitle()) +
+    public void viewInfo(){
+        System.out.println(String.format("%s ", getTitle()) +
                String.format("[%s |", getStatus()) +
-               String.format(" %s]", getDueDate());
+               String.format(" %s]", getDueDate()));
     }
     public void viewEvents(){
-        for (String event: EventLogList) {
-            System.out.println(event);
+        viewEvents(getItemID().toString());
+    }
+    public void viewEvents(String objID){
+        for (String[] event : EventLogList.getEventLog(objID)) {
+            System.out.println(event[0] + " " + event[1]);
         }
+    }
+    public String getItemID(){
+        return this.objID.toString();
     }
 
     public static boolean isAdded() {
