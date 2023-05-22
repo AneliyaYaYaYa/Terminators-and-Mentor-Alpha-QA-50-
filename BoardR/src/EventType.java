@@ -23,4 +23,8 @@ public enum EventType {
             return "Status changed";
         }
     },
+    NEW_ASSIGNEE{
+        @Override
+        public String toString() {return "Assignee changed";}
+    }
 }

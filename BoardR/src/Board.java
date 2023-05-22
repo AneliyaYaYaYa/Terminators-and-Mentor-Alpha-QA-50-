@@ -5,7 +5,7 @@ public class Board {
     private static final List<BoardItem> items = new ArrayList<>();
     private static final String ITEM_EXISTS = " already in the list";
 
-    public static void addItems(BoardItem item){
+    public static void addItem(BoardItem item){
             if (BoardItem.isAdded()) throw new IllegalArgumentException(item.getTitle() + ITEM_EXISTS);
             else items.add(item);
     }
@@ -13,5 +13,8 @@ public class Board {
         for (BoardItem item:items) {
             item.viewInfo();
         }
+    }
+    public int totalItems(){
+        return items.size();
     }
 }
