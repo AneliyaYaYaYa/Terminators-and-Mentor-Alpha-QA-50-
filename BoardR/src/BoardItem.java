@@ -10,11 +10,18 @@ public class BoardItem {
             String.format("Please provide a title with length between %d and %d chars",
                     TITLE_MIN_LENGTH,
                     TITLE_MAX_LENGTH);
-    public static final String INVALID_DUE_DATE = "Invalid due date";
+    private static final String INVALID_DUE_DATE = "Invalid due date";
+    private static final int EVENT_NAME = 1;
+    private static final int EVENT_TIME = 2;
+    private static final int MAX_STATUS = 4;
+    private static final int MIN_STATUS = 0;
+    private static final int MIN_DATE_OFFS = 0;
+    private static final int OLD_VALUE = 3;
+    private static final int NEW_VALUE = 4;
     private String title;
     private LocalDate dueDate;
     private Status status;
-    private UUID objID;
+    private final UUID objID;
     private static boolean added = true;
 
     BoardItem(String title, LocalDate input) {
@@ -31,7 +38,7 @@ public class BoardItem {
     }
     //begin setters
     public void newTitle (String title){
-        EventLogList.eventAdd(EventType.NEW_TITLE, LocalDateTime.now(), this.objID);
+        EventLogList.eventAdd(EventType.NEW_TITLE, LocalDateTime.now(), this.objID, getTitle(), title);
         setTitle(title);
     }
     private void setTitle(String title){
@@ -40,12 +47,13 @@ public class BoardItem {
         else throw new IllegalArgumentException(TITLE_ERROR);
     }
     public void newDueDate (LocalDate input) {
-        EventLogList.eventAdd(EventType.NEW_DATE, LocalDateTime.now(), this.objID);
+        String oldDate = getDueDate().toString();
         long dateOffset = ChronoUnit.DAYS.between(LocalDate.now(), input);
         setDueDate(dateOffset);
+        EventLogList.eventAdd(EventType.NEW_DATE, LocalDateTime.now(), this.objID, oldDate, getDueDate().toString());
     }
     private void setDueDate(long dateOffset) {
-        if (dateOffset >= 0)
+        if (dateOffset >= MIN_DATE_OFFS)
             this.dueDate = LocalDate.now().plusDays(dateOffset);
         else System.out.println(INVALID_DUE_DATE);
      }
@@ -57,16 +65,18 @@ public class BoardItem {
         return values[index];
     }
      public void advanceStatus(){
+        String oldStatus = getStatus().toString();
         int index = status.ordinal();
-        if (index != 4) index++;
+        if (index != MAX_STATUS) index++;
         status = setStatus(index);
-         EventLogList.eventAdd(EventType.NEW_STATUS, LocalDateTime.now(), this.objID);
+        EventLogList.eventAdd(EventType.NEW_STATUS, LocalDateTime.now(), this.objID, oldStatus, getStatus().toString());
      }
      public void revertStatus(){
-         int index = status.ordinal();
-         if (index != 0) index--;
-         status = setStatus(index);
-         EventLogList.eventAdd(EventType.NEW_STATUS, LocalDateTime.now(), this.objID);
+        String oldStatus = getStatus().toString();
+        int index = status.ordinal();
+        if (index != MIN_STATUS) index--;
+        status = setStatus(index);
+        EventLogList.eventAdd(EventType.NEW_STATUS, LocalDateTime.now(), this.objID, oldStatus, getStatus().toString());
      }
      private void setAdded(){
         added = !added;
@@ -83,16 +93,22 @@ public class BoardItem {
         return status;
         }
     public void viewInfo(){
-        System.out.println(String.format("%s ", getTitle()) +
-               String.format("[%s |", getStatus()) +
-               String.format(" %s]", getDueDate()));
+        System.out.printf("%s [%s | %s]%n", getTitle(), getStatus(), getDueDate());
     }
-    public void viewEvents(){
-        viewEvents(getItemID().toString());
+    public void displayHistory(){
+        displayHistory(getItemID());
     }
-    public void viewEvents(String objID){ //rename method to displayHistory(), add old+new formatting for event changes
+    public void displayHistory(String objID){
         for (String[] event : EventLogList.getEventLog(objID)) {
-            System.out.println(event[0] + " " + event[1]);
+            if (event.length > 3/*event[EVENT_NAME].equals(EventType.NEW_TITLE.toString()) ||
+                    event[EVENT_NAME].equals(EventType.NEW_STATUS.toString()) ||
+                    event[EVENT_NAME].equals(EventType.NEW_DATE.toString())*/)
+                System.out.printf("%s %s changed from '%s' to '%s'%n",
+                        event[EVENT_TIME],
+                        event[EVENT_NAME],
+                        event[OLD_VALUE],
+                        event[NEW_VALUE]);
+            else System.out.printf("%s %s%n",event[EVENT_TIME], event[EVENT_NAME]);
         }
     }
     public String getItemID(){

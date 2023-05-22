@@ -11,7 +11,7 @@ public enum Status {
                 return "To do";
             }
         },
-        INPROGRESS{
+        IN_PROGRESS {
             @Override
             public String toString() {
                 return "In Progress";
