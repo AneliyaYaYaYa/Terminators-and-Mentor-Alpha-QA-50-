@@ -9,6 +9,7 @@ import java.util.List;
 
 public class ToothpasteImpl extends ProductBase implements Toothpaste {
 
+    private static final String INGREDIENTS_NULL_ERROR = "Ingredients cannot be null.";
     private List<String> ingredients;
     
     public ToothpasteImpl(String name, String brand, double price, GenderType gender, List<String> ingredients) {
@@ -16,10 +17,9 @@ public class ToothpasteImpl extends ProductBase implements Toothpaste {
         setIngredients(ingredients);
     }
 
-
     private void setIngredients(List<String> ingredients) {
         if (ingredients == null) {
-            throw new IllegalArgumentException("Ingredients cannot be null.");
+            throw new IllegalArgumentException(INGREDIENTS_NULL_ERROR);
         }
         this.ingredients = ingredients;
     }

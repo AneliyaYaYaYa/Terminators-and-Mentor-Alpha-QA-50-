@@ -8,17 +8,15 @@ import com.company.cosmetics.models.common.UsageType;
 public class ShampooImpl extends ProductBase implements Shampoo {
 
     private static final int MIN_MILLILITERS = 0;
-
     private static final String MILLILITERS_ERROR = "Milliliters cannot be negative.";
-
+    private static final String USAGETYPE_NULL_ERROR = "Usage type cannot be null.";
     private int milliliters;
+    private UsageType usageType;
 
-    private final UsageType everyday;
-
-    public ShampooImpl(String name, String brand, double price, GenderType gender, int milliliters, UsageType everyDay) {
+    public ShampooImpl(String name, String brand, double price, GenderType gender, int milliliters, UsageType usageType) {
         super(name, brand, price, gender);
         setMilliliters(milliliters);
-        this.everyday = everyDay;
+        setUsageType(usageType);
     }
 
     private void setMilliliters(int milliliters) {
@@ -28,6 +26,12 @@ public class ShampooImpl extends ProductBase implements Shampoo {
         this.milliliters = milliliters;
     }
 
+    private void setUsageType(UsageType usageType) {
+        if (usageType == null) {
+            throw new IllegalArgumentException(USAGETYPE_NULL_ERROR);
+        }
+        this.usageType = usageType;
+    }
 
     @Override
     public String getName() {
@@ -61,6 +65,6 @@ public class ShampooImpl extends ProductBase implements Shampoo {
 
     @Override
     public UsageType getUsage() {
-        return everyday;
+        return usageType;
     }
 }

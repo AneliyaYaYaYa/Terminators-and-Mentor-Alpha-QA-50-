@@ -16,16 +16,17 @@ public class ProductBase implements Product {
     private static final int MIN_PRICE = 0;
     private static final String PRICE_ERROR = "Price cannot be negative.";
     private static final String NAME_NULL_ERROR = "Name cannot be null.";
+    public static final String GENDER_ERROR = "Gender cannot be null.";
     private String name;
     private String brand;
     private double price;
-    private final GenderType gender;
+    private GenderType gender;
 
     public ProductBase(String name, String brand, double price, GenderType gender) {
         setName(name);
         setBrand(brand);
         setPrice(price);
-        this.gender = gender;
+        setGender(gender);
     }
 
     private void setName(String name) {
@@ -47,6 +48,13 @@ public class ProductBase implements Product {
     private void setPrice(double price) {
         validatePrice(price);
         this.price = price;
+    }
+
+    private void setGender(GenderType gender) {
+        if (gender == null) {
+            throw new IllegalArgumentException(GENDER_ERROR);
+        }
+        this.gender = gender;
     }
 
     private static void validatePrice(double price) {
@@ -89,6 +97,7 @@ public class ProductBase implements Product {
 
     @Override
     public String print() {
-        return String.format("#%s %s%n #Price: $%.2f%n #Gender: %s", getName(), getBrand(), getPrice(), getGender());
+        return String.format("#%s %s%n #Price: $%.2f%n #Gender: %s",
+                getName(), getBrand(), getPrice(), getGender());
     }
 }
