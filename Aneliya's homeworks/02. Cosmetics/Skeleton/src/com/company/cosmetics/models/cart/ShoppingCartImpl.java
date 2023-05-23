@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ShoppingCartImpl implements ShoppingCart {
     
-    private List<Product> productList;
+    private final List<Product> productList;
     
     public ShoppingCartImpl() {
         productList = new ArrayList<>();

@@ -5,27 +5,28 @@ import com.company.cosmetics.models.common.GenderType;
 
 
 public class ProductBase implements Product {
-    public static final int NAME_MIN_LENGTH = 3;
-    public static final int NAME_MAX_LENGTH = 10;
-    public static final String NAME_ERROR_MESSAGE = String.format(
+    private static final int NAME_MIN_LENGTH = 3;
+    private static final int NAME_MAX_LENGTH = 10;
+    private static final String NAME_ERROR_MESSAGE = String.format(
             "Name's length must be between %d and %d characters.",
             NAME_MIN_LENGTH, NAME_MAX_LENGTH);
-    public static final int BRAND_NAME_MIN_LENGTH = 2;
-    public static final String BRAND_NAME_ERROR = String.format("Brand name's length must be between %d and %d characters.",
+    private static final int BRAND_NAME_MIN_LENGTH = 2;
+    private static final String BRAND_NAME_ERROR = String.format("Brand name's length must be between %d and %d characters.",
             BRAND_NAME_MIN_LENGTH, NAME_MAX_LENGTH);
-    public static final int MIN_PRICE = 0;
-    public static final String PRICE_ERROR = "Price cannot be negative.";
-    public static final String NAME_NULL_ERROR = "Name cannot be null.";
+    private static final int MIN_PRICE = 0;
+    private static final String PRICE_ERROR = "Price cannot be negative.";
+    private static final String NAME_NULL_ERROR = "Name cannot be null.";
+    public static final String GENDER_ERROR = "Gender cannot be null.";
     private String name;
     private String brand;
     private double price;
     private GenderType gender;
-    
+
     public ProductBase(String name, String brand, double price, GenderType gender) {
         setName(name);
         setBrand(brand);
         setPrice(price);
-        this.gender = gender;
+        setGender(gender);
     }
 
     private void setName(String name) {
@@ -49,14 +50,21 @@ public class ProductBase implements Product {
         this.price = price;
     }
 
+    private void setGender(GenderType gender) {
+        if (gender == null) {
+            throw new IllegalArgumentException(GENDER_ERROR);
+        }
+        this.gender = gender;
+    }
+
     private static void validatePrice(double price) {
         if (price < MIN_PRICE) {
-           throw new IllegalArgumentException(PRICE_ERROR);
+            throw new IllegalArgumentException(PRICE_ERROR);
         }
     }
 
     private static void validateBrandName(String brand) {
-        if (brand.length() < BRAND_NAME_MIN_LENGTH || brand.length() >NAME_MAX_LENGTH ) {
+        if (brand.length() < BRAND_NAME_MIN_LENGTH || brand.length() > NAME_MAX_LENGTH) {
             throw new IllegalArgumentException(BRAND_NAME_ERROR);
         }
     }
@@ -69,28 +77,27 @@ public class ProductBase implements Product {
 
     @Override
     public String getName() {
-        throw new UnsupportedOperationException("Not implemented yet. ProductBase class");
+        return this.name;
     }
 
     @Override
     public String getBrand() {
-        throw new UnsupportedOperationException("Not implemented yet. ProductBase class");
+        return this.brand;
     }
 
     @Override
     public double getPrice() {
-        price += getPrice();
-        return getPrice();
-        //throw new UnsupportedOperationException("Not implemented yet. ProductBase class");
+        return this.price;
     }
 
     @Override
     public GenderType getGender() {
-        throw new UnsupportedOperationException("Not implemented yet. ProductBase class");
+        return this.gender;
     }
 
     @Override
     public String print() {
-        throw new UnsupportedOperationException("Not implemented yet. ProductBase class");
+        return String.format("#%s %s%n #Price: $%.2f%n #Gender: %s",
+                getName(), getBrand(), getPrice(), getGender());
     }
 }
