@@ -5,9 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4217662f-5047-4002-9398-e8cad171d209" name="Changes" comment="Renaming In-class activity tasks &#10;The description for each task is in the respective folder. Individual solutions to each task are in the person's respective folder. (Simo's solutions are in anotehr branch)">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/BoardR-in-class activity/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Aneliya's homeworks/BoardR-in-class activity/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/Skeleton/src/com/company/oop/agency/models/vehicles/AirplaneImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/Skeleton/src/com/company/oop/agency/models/vehicles/AirplaneImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/Skeleton/src/com/company/oop/agency/models/vehicles/BusImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/Skeleton/src/com/company/oop/agency/models/vehicles/BusImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/Skeleton/src/com/company/oop/agency/models/vehicles/TrainImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/Skeleton/src/com/company/oop/agency/models/vehicles/TrainImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/Skeleton/src/com/company/oop/agency/models/vehicles/VehiclesBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/Startup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/CommandsConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/contracts/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/creation/CreateAirplaneCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/creation/CreateBusCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/creation/CreateJourneyCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/creation/CreateTicketCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/creation/CreateTrainCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/enums/CommandType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/listing/ListJourneysCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/listing/ListTicketsCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/commands/listing/ListVehiclesCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/core/AgencyEngineImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/core/AgencyRepositoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/core/CommandFactoryImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/core/CommandFactoryImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/core/contracts/AgencyRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/core/contracts/CommandFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/core/contracts/Engine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/exceptions/ElementNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/exceptions/InvalidUserInputException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/JourneyImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/TicketImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/contracts/Identifiable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/contracts/Journey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/contracts/Printable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/contracts/Ticket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/AirplaneImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/BusImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/TrainImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/VehicleType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/VehiclesBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/contracts/Airplane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/contracts/Bus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/contracts/Train.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/models/vehicles/contracts/Vehicle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/utils/ListingHelpers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/utils/ParsingHelpers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/production/03. Agency/com/company/oop/agency/utils/ValidationHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/commands/CreateAirplaneCommandTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/commands/CreateBusCommandTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/commands/CreateJourneyCommandTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/commands/CreateTicketCommandTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/commands/CreateTrainCommandTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/core/AgencyRepositoryTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/models/JourneyTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/models/TicketTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/models/vehicles/AirplaneTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/models/vehicles/BusTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/models/vehicles/TrainTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aneliya's homeworks/03. Agency/out/test/03. Agency/com/company/oop/agency/tests/utils/TestUtilities.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,11 +70,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -38,17 +91,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Ani/IdeaProjects/REPOS/NEW NEW NEW",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ani/IdeaProjects/REPOS/NEW NEW NEW&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
